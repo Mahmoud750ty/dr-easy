@@ -1,0 +1,60 @@
+.default {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.default:hover {
+  background-color: #e0e0e0;
+}
+
+.edit {
+  background-color: #ffc107;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.edit:hover {
+  background-color: #ffa000;
+}
+
+.delete {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete:hover {
+  background-color: #d32f2f;
+}
+
+.create {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 22px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create:hover {
+  background-color: #0069d9;
+}

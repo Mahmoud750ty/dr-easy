@@ -1,0 +1,17 @@
+/* src/app/app.component.scss */
+.app-container {
+  display: fixed;
+}
+
+.sidebar-visible .content-area {
+  margin-left: 250px;
+  display: none;
+}
+
+.sidebar-visible app-sidebar {
+  width: 250px;
+}
+
+.content-area {
+  flex-grow: 1;
+}

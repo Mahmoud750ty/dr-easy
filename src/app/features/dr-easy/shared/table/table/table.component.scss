@@ -1,0 +1,64 @@
+table {
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 22px;
+  border-collapse: collapse;
+  border-radius: 20px;
+  overflow: hidden;
+
+  th, td {
+    border: 1px solid #2c6dcf;
+    padding: 10px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #2c6dcf;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  tr:last-child {
+    td:first-child {
+      border-bottom-left-radius: 1px;
+    }
+    td:last-child {
+      border-bottom-right-radius: 1px;
+    }
+  }
+}
+
+.edit-button, .delete-button {
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 5px;
+}
+
+.edit-button {
+  background-color: #ffc107;
+  color: #fff;
+
+  &:hover {
+    background-color: #ffa000;
+  }
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: #fff;
+
+  &:hover {
+    background-color: #d32f2f;
+  }
+}
+
+.no-data-message {
+  text-align: center;
+  font-size: 1.4em;
+  margin-top: 20px;
+  color: #999;
+}

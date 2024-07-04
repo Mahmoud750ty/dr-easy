@@ -1,0 +1,66 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: linear-gradient(to bottom, #2196f3 7%, #fff 7%);
+  padding: 20px;
+  border-radius: 5px;
+  width: 500px;
+  font-size: 22px;
+
+
+}
+
+.modal-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  margin-top: -10px;
+  background-color: #2196f3;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50% ;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.save-button, .cancel-button {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 22px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.save-button {
+  background-color: #4ac18e;
+  color: #fff;
+
+  &:hover {
+    background-color: #43a047;
+  }
+}
+
+.cancel-button {
+  background-color: #f44336;
+  color: #fff;
+
+  &:hover {
+    background-color: #d32f2f;
+  }
+}

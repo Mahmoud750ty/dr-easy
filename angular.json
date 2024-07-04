@@ -17,6 +17,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "allowedCommonJsDependencies": [
+              "undici",
+              "@grpc/grpc-js",
+              "@grpc/proto-loader"
+            ],
             "outputPath": "dist/dr-easy",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -103,5 +108,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "8e2978d5-879a-4b91-933e-707d1f4e7e2d"
   }
 }

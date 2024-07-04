@@ -1,0 +1,53 @@
+<!-- appointment.component.html -->
+<div class="appointment-container">
+  <div class="header">
+    <app-search-bar
+      placeholder="Search by patient name"
+      (searchChange)="onSearch($event)">
+    </app-search-bar>
+    <app-create-button
+      label="Create Appointment"
+      (create)="onCreateAppointment()">
+    </app-create-button>
+  </div>
+
+  <app-table
+    [data]="filteredAppointments"
+    [columns]="tableColumns"
+    (edit)="onEditAppointment($event)"
+    (delete)="onDeleteAppointment($event)">
+  </app-table>
+
+  <app-modal
+    [visible]="visible"
+    [title]="editMode ? 'Edit Appointment' : 'Create Appointment'"
+    (save)="onSave()"
+    (cancel)="onCancel()">
+    <form [formGroup]="editMode ? editForm : appointmentForm">
+      <div class="form-group">
+        <label for="Patient">Patient Name:</label>
+        <input type="text" id="Patient" formControlName="Patient" />
+      </div>
+      <div class="form-group">
+        <label for="day">Appointment Date:</label>
+        <input type="date" id="day" formControlName="day" />
+      </div>
+      <div class="form-group">
+        <label for="next_appointment">Next Appointment:</label>
+        <input type="date" id="next_appointment" formControlName="next_appointment" />
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" formControlName="phone" />
+      </div>
+      <div class="form-group">
+        <label for="details">Details:</label>
+        <textarea id="details" formControlName="details"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="isdone">Is Done?</label>
+        <input type="checkbox" id="isdone" formControlName="isdone" />
+      </div>
+    </form>
+  </app-modal>
+</div>

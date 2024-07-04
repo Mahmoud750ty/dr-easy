@@ -1,0 +1,26 @@
+<table *ngIf="data.length > 0; else noData">
+  <thead>
+    <tr>
+      <th *ngFor="let column of columns">{{ column.label }}</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data; let i = index">
+      <td *ngFor="let column of columns">
+        {{ item[column.key] }}
+      </td>
+      <td>
+        <button class="edit-button" (click)="onEdit(item)" title="Edit">
+          <fa-icon [icon]="faEdit"></fa-icon>
+        </button>
+        <button class="delete-button" (click)="onDelete(item)" title="Delete">
+          <fa-icon [icon]="faTrash"></fa-icon>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<ng-template #noData>
+  <div class="no-data-message">There is no data yet.</div>
+</ng-template>

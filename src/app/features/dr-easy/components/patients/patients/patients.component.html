@@ -1,0 +1,56 @@
+<div class="patient-container">
+  <div class="header">
+    <app-search-bar
+      placeholder="Search by name"
+      (searchChange)="onSearch($event)">
+    </app-search-bar>
+    <app-create-button
+      label="Create Patient"
+      (create)="onCreatePatient()">
+    </app-create-button>
+  </div>
+
+  <app-table
+    [data]="filteredPatients"
+    [columns]="tableColumns"
+    (edit)="onEditPatient($event)"
+    (delete)="onDeletePatient($event)">
+  </app-table>
+
+  <app-modal
+    [visible]="visible"
+    [title]="editMode ? 'Edit Patient' : 'Create Patient'"
+    (save)="onSave()"
+    (cancel)="onCancel()">
+    <form [formGroup]="editMode ? editForm : patientForm">
+      <div class="form-group">
+        <label for="Patient">Patient Name:</label>
+        <input type="text" id="Patient" formControlName="Patient" />
+      </div>
+      <div class="form-group">
+        <label for="Patient_description">Description:</label>
+        <textarea id="Patient_description" formControlName="Patient_description"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="day">Date:</label>
+        <input type="date" id="day" formControlName="day" />
+      </div>
+      <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="number" id="price" formControlName="price" />
+      </div>
+      <div class="form-group">
+        <label for="payed">Paid:</label>
+        <input type="number" id="payed" formControlName="payed" />
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" formControlName="phone" />
+      </div>
+      <div class="form-group">
+        <label for="details">Details:</label>
+        <textarea id="details" formControlName="details"></textarea>
+      </div>
+    </form>
+  </app-modal>
+</div>

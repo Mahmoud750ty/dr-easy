@@ -1,0 +1,53 @@
+<!-- lab-orders.component.html -->
+<div class="lab-orders-container">
+  <div class="header">
+    <app-search-bar
+      placeholder="Search by patient name"
+      (searchChange)="onSearch($event)">
+    </app-search-bar>
+    <app-create-button
+      label="Create Lab Order"
+      (create)="onCreateLabOrder()">
+    </app-create-button>
+  </div>
+
+  <app-table
+    [data]="filteredLabOrders"
+    [columns]="tableColumns"
+    (edit)="onEditLabOrder($event)"
+    (delete)="onDeleteLabOrder($event)">
+  </app-table>
+
+  <app-modal
+    [visible]="visible"
+    [title]="editMode ? 'Edit Lab Order' : 'Create Lab Order'"
+    (save)="onSave()"
+    (cancel)="onCancel()">
+    <form [formGroup]="editMode ? editForm : labOrderForm">
+      <div class="form-group">
+        <label for="Patient">Patient Name:</label>
+        <input type="text" id="Patient" formControlName="Patient" />
+      </div>
+      <div class="form-group">
+        <label for="order_description">Order Description:</label>
+        <textarea id="order_description" formControlName="order_description"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="day">Date:</label>
+        <input type="date" id="day" formControlName="day" />
+      </div>
+      <div class="form-group">
+        <label for="Delivered">Delivered:</label>
+        <input type="checkbox" id="Delivered" formControlName="Delivered" />
+      </div>
+      <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="number" id="price" formControlName="price" />
+      </div>
+      <div class="form-group">
+        <label for="payed">Paid:</label>
+        <input type="checkbox" id="payed" formControlName="payed" />
+      </div>
+    </form>
+  </app-modal>
+</div>

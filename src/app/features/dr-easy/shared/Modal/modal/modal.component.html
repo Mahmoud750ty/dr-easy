@@ -1,0 +1,10 @@
+<div *ngIf="visible" class="modal">
+  <div class="modal-content">
+    <h2 class="modal-title">{{ title }}</h2>
+    <ng-content></ng-content>
+    <div class="button-group">
+      <button type="submit" class="save-button" (click)="onSave()">Save</button>
+      <button type="button" class="cancel-button" (click)="onCancel()">Cancel</button>
+    </div>
+  </div>
+</div>

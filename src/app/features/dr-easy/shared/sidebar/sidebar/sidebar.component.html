@@ -1,0 +1,31 @@
+<div class="sidebar-container" [class.collapsed]="isSidebarCollapsed">
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <a [routerLink]="'/'"> <img src="logo.jpeg" alt="logo" /></a>
+      </div>
+    </div>
+
+    <ul class="nav">
+      <li
+        *ngFor="let item of navItems"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: item.link === '/' }"
+      >
+        <a [routerLink]="item.link">
+          <fa-icon [icon]="item.icon"></fa-icon>
+          <span class="link-text">{{ item.text }}</span>
+        </a>
+      </li>
+    </ul>
+    <button title="Toggle Sidebar" class="toggle-btn" (click)="toggleSidebar()">
+      <fa-icon [icon]="faArrowsToCircle"></fa-icon>
+    </button>
+    <button class="signout-btn" (click)="signOut()">
+      <fa-icon [icon]="faRightFromBracket" style="color: #000000;"></fa-icon> <span>  </span> SignOut
+    </button>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
