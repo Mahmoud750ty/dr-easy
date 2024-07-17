@@ -34,7 +34,11 @@ export class SignupComponent {
       this.router.navigate(['/login']);
 
     } catch (error) {
-      console.error('Error creating user:', error);
+      console.error('Error creating user:');
+
+      // Handle error
+
+      this.errorMessage = 'Email or password is incorrect .';
     }
   }
 }

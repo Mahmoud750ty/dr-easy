@@ -40,11 +40,11 @@ export class LoginComponent {
       localStorage.setItem('userLoggedIn', 'true');
 
       // Redirect to home page after successful login
-      this.router.navigate(['/profile']);
+      this.router.navigateByUrl('/profile');
 
     } catch (error: any) {
-      console.error('Error logging in:', error.message);
-      this.errorMessage = error.message;
+      console.error('Error logging in:');
+      this.errorMessage = 'Email or password is incorrect.';
     }
   }
 }
